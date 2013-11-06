@@ -38,8 +38,8 @@ app.get('/articles/', function(req, res){
 app.post('/articles', function (req, res){
 	req.body.id = uuid.v1();
 	req.body.votes = 0;
-	req.body.image = "/img/img3.jpg";
-	req.body.user  = "Siedrix";
+	req.body.image = "/imagenes/img3.jpg";
+	// req.body.user  = "Siedrix";
 
 	data.push(req.body);
 

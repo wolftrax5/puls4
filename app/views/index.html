@@ -26,6 +26,7 @@
     <script src="/js/backbone/collections/articles.js"></script>
 
     <script src="/js/backbone/views/article-view.js"></script>
+    <script src="/js/backbone/views/app.js"></script>
 
     <script src="/js/main.js"></script>
 </head>
@@ -68,6 +69,12 @@
             <li><a href="#">CSS3</a></li>
         </ul>
     </nav>
+    <form action="" style="display:none">
+        <p><label for="titulo">Título</label><input name="titulo" type="text"></p>
+        <p><label for="autor">Autor</label><input name="autor" type="text"></p>
+        <p><label for="tag">Tag</label><input name="tag" type="text"></p>
+        <input type="submit" value="Publicar">
+    </form>    
     <section class="posts">
 
     </section>
