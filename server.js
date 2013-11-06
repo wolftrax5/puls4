@@ -31,7 +31,7 @@ app.use(express.methodOverride());
 app.use( express.static('./public') );
 
 // Routes
-app.get('/articles/all', function(req, res){
+app.get('/articles/', function(req, res){
 	res.send(data);
 });
 
@@ -50,13 +50,14 @@ app.post('/articles', function (req, res){
 	res.send(200, {status:"Ok", id: req.body.id});
 });
 
-app.put('/articles/:id', function (req, res){
+app.put('/articles', function (req, res){
+	console.log('Updating',req.body);
 	var article;
 
 	for (var i = data.length - 1; i >= 0; i--) {
 		article = data[i];
 
-		if(article.id === req.params.id){
+		if(article.id === req.body.id){
 			data[i] = req.body;
 		}
 	}
