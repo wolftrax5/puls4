@@ -31,7 +31,7 @@ app.use(express.methodOverride());
 app.use( express.static('./public') );
 
 // Routes
-app.get('/articles/all', function(req, res){
+app.get('/articles/', function(req, res){
 	res.send(data);
 });
 
