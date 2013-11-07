@@ -9,7 +9,7 @@ Puls3.Views.Article = Backbone.View.extend({
 	initialize : function () {
 		var self = this;
 
-		this.model.on('change', function (data) {
+		this.model.on('change', function () {
 			self.render();
 		});
 
@@ -30,7 +30,7 @@ Puls3.Views.Article = Backbone.View.extend({
 		this.templateExtend = _.template( $('#article-extended-template').html() );
 		// this.template = swig.compile( $('#article-template').html() );
 	},
-	navigate : function (argument) {
+	navigate : function () {
 		Backbone.history.navigate('article/'+this.model.get('id'), {trigger: true});
 	},
 	upvote : function (e) {

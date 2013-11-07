@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/puls4.css" />
 
+    {% if env === "dev" %}
     <script src="/js/vendor/jquery-2.0.3.js"></script>
     <script src="/js/vendor/underscore.js"></script>
     <script src="/js/vendor/backbone.js"></script>
@@ -31,6 +32,7 @@
     <script src="/js/backbone/routers/base.js"></script>
 
     <script src="/js/main.js"></script>
+    {% endif %}
 </head>
 <body>
     <header>
@@ -144,7 +146,13 @@
                 <a class="estrellita" href="#"></a>
             </div>
         </div>
-    </script>    
+    </script>
+
+    {% if env === "prod" %}
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="vendors.min.js"></script>
+    <script src="app.min.js"></script>
+    {% endif %}    
 </body>
 </html>
 
