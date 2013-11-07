@@ -21,8 +21,7 @@ $(document).ready(function(){
 		var view = new Puls4.Views.Article({model:model});
 
 		view.render();
-
-		view.$el.prependTo('.posts');
+		$('.posts').prepend(view.$el.fadeIn());
 	});
 
 	window.collections.articles.fetch();
