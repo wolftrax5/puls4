@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	console.log('main.js loaded');
 
+	window.routers.base = new Puls3.Routers.Base();
+
 	window.ponyExpress = new PonyExpress({
 		io : window.location.origin
 	});
@@ -25,5 +27,15 @@ $(document).ready(function(){
 		view.$el.prependTo('.posts');
 	});
 
-	window.collections.articles.fetch();
+	var xhr = window.collections.articles.fetch();
+
+	xhr.done(function () {
+		console.log('Start app');
+
+		Backbone.history.start({
+			root : '/',
+			pushState: true,
+			silent : false
+		});
+	});
 });

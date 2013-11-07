@@ -1,10 +1,14 @@
 Puls3.Views.App = Backbone.View.extend({
 	events : {
 		"click .publicar" : "showForm",
-		"submit form" : "createArticle"
+		"submit form" : "createArticle",
+		"click .logo" : "navigateHome"
 	},
 	initialize : function ($el) {
 		this.$el = $el;
+	},
+	navigateHome : function () {
+		Backbone.history.navigate('', {trigger:true});
 	},
 	showForm : function () {
 		this.$el.find('form').show();
