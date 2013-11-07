@@ -10,7 +10,11 @@ Puls3.Views.Article = Backbone.View.extend({
 		var self = this;
 
 		this.model.on('change', function () {
-			self.render();
+			if(window.app.state === "articleSingle"){
+				self.renderExtend();
+			}else{
+				self.render();
+			}
 		});
 
 		window.routers.base.on('route:root', function () {
