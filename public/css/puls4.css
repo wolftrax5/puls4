@@ -39,6 +39,7 @@ nav .menu li a:hover{background:rgba(0,0,0,0.1)}
 .posts .post .acciones .votos .down:before{content:"\e602"}
 .posts .post .acciones .votos .up{color:#008000;}
 .posts .post .acciones .votos .up:before{content:"\e603"}
+.posts .post .descripcion.extended .detalles{height:auto;padding-bottom:20px}
 .posts .post .descripcion .detalles{height:160px;margin-left:130px;}
 .posts .post .descripcion .detalles .autor{margin:.5em 0 2em 0}
 .posts .post .descripcion .detalles .fecha{float:right;margin:0 1em 0 0}
@@ -48,6 +49,6 @@ nav .menu li a:hover{background:rgba(0,0,0,0.1)}
 .posts .post .descripcion .imagen img{height:160px;vertical-align:top;width:120px}
 @media screen and (min-width: 768px){header .titular .publicar{font-size:1.1em;padding-left:3em;position:relative;}
 header .titular .publicar:before{left:0;font-size:2.5em;position:absolute;top:-10px}
-.posts .post{display:inline-block;width:48%;vertical-align:top;}
+.posts .post{display:inline-block !important;width:48%;vertical-align:top;}
 .posts .post:nth-child(odd){margin-right:2%}
 }
