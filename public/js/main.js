@@ -3,6 +3,16 @@ $(document).ready(function(){
 
 	window.views.app = new Puls4.Views.App( $('body') );
 
+	window.ponyExpress = new PonyExpress({
+		io : window.location.origin
+	});
+
+	window.ponyExpress.bind('connect', function () {
+		window.plugs.article = new PonyExpress.BackbonePlug({
+			collection : window.collections.articles
+		});
+	});
+
 	// c = new Puls4.Collections.Articles()
 	window.collections.articles = new Puls4.Collections.Articles();
 	window.collections.articles.on('add', function (model) {
@@ -12,7 +22,7 @@ $(document).ready(function(){
 
 		view.render();
 
-		view.$el.appendTo('.posts');
+		view.$el.prependTo('.posts');
 	});
 
 	window.collections.articles.fetch();
