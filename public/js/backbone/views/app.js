@@ -1,10 +1,14 @@
 Puls4.Views.App = Backbone.View.extend({
 	events:{
 		"click .publicar" : "showForm",
-		"submit form" : "createPost"
+		"submit form" : "createPost",
+		"click .logo" : "navigateHome"
 	},
 	initialize : function ($el) {
 		this.$el = $el;
+	},
+	navigateHome : function(){
+		Backbone.history.navigate('/', {trigger:true});
 	},
 	showForm : function () {
 		this.$el.find('form').show();
@@ -27,5 +31,8 @@ Puls4.Views.App = Backbone.View.extend({
 		var model = new Puls4.Models.Article(data);
 
 		model.save();
+
+		this.$el.find('form input[type=text]').val('');
+		this.$el.find('form').slideUp();		
 	}
 });
