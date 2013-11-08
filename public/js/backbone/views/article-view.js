@@ -9,7 +9,7 @@ Puls4.Views.Article = Backbone.View.extend({
 	initialize : function () {
 		var self = this;
 
-		this.model.on('change', function(model){
+		this.model.on('change', function(){
 			if(window.app.state === "articleSingle"){
 				self.extendedRender();
 			}else{
